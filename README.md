@@ -30,5 +30,8 @@ Publish messages with the _publish_ command.
 
 
 ```
- ./bin/udb2domainevents.php publish test application/vnd.cultuurnet.udb2-events.event-updated+json samples/application/vnd.cultuurnet.udb2-events.event-updated+json
+ ./bin/udb2domainevents.php publish \
+    test \
+    application/vnd.cultuurnet.udb2-events.event-updated+json \
+    samples/application/vnd.cultuurnet.udb2-events.event-updated+json;
 ```
