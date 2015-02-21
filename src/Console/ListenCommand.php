@@ -76,6 +76,10 @@ class ListenCommand extends Command
                         $msg->get('content_type')
                     );
 
+                    $deserializer->deserialize(
+                        new String($msg->body)
+                    );
+
                     $output->writeln('<info>message was recognized and well-formed</info>');
                 }
                 catch (\Exception $e) {
