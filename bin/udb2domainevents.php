@@ -42,7 +42,7 @@ $app['amqp'] = $app->share(
 
 $app['deserializerLocator'] = $app->share(
     function () {
-        $deserializerLocator = new \CultuurNet\UDB2DomainEvents\JSONDeserializerLocator();
+        $deserializerLocator = new \CultuurNet\UDB2DomainEvents\SimpleDeserializerLocator();
 
         $deserializerLocator->registerDeserializer(
             new \ValueObjects\String\String(
