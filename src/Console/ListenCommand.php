@@ -5,9 +5,9 @@
 
 namespace CultuurNet\UDB2DomainEventsTestTools\Console;
 
-use CultuurNet\UDB2DomainEvents\JSONDeserializerInterface;
-use CultuurNet\UDB2DomainEvents\JSONDeserializerLocator;
-use CultuurNet\UDB2DomainEvents\JSONDeserializerLocatorInterface;
+use CultuurNet\UDB2DomainEvents\DeserializerInterface;
+use CultuurNet\UDB2DomainEvents\SimpleDeserializerLocator;
+use CultuurNet\UDB2DomainEvents\DeserializerLocatorInterface;
 use PhpAmqpLib\Connection\AMQPConnection;
 use Cilex\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -107,14 +107,14 @@ class ListenCommand extends Command
     /**
      * @param string $contentType
      *
-     * @return JSONDeserializerInterface
+     * @return DeserializerInterface
      */
     private function getDeserializer($contentType)
     {
-        /** @var JSONDeserializerLocatorInterface $deserializerLocator */
+        /** @var DeserializerLocatorInterface $deserializerLocator */
         $deserializerLocator = $this->getService('deserializerLocator');
 
-        $deserializerLocator->getDeserializerForContentType(
+        return $deserializerLocator->getDeserializerForContentType(
             new String($contentType)
         );
     }
