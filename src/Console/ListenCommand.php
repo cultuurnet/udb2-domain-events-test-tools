@@ -6,7 +6,6 @@
 namespace CultuurNet\UDB2DomainEventsTestTools\Console;
 
 use CultuurNet\UDB2DomainEvents\DeserializerInterface;
-use CultuurNet\UDB2DomainEvents\SimpleDeserializerLocator;
 use CultuurNet\UDB2DomainEvents\DeserializerLocatorInterface;
 use PhpAmqpLib\Connection\AMQPConnection;
 use Cilex\Command\Command;
