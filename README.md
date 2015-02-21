@@ -35,3 +35,13 @@ Publish messages with the _publish_ command.
     application/vnd.cultuurnet.udb2-events.event-updated+json \
     samples/application/vnd.cultuurnet.udb2-events.event-updated+json;
 ```
+
+# Building a single-file application
+
+You can put this entire PHP application into a single Phar file with [Box].
+
+```
+box build
+```
+
+[Box]: http://box-project.org/

@@ -1,0 +1,14 @@
+{
+  "chmod": "0755",
+  "directories": ["src"],
+  "finder": [
+    {
+      "name": "*.php",
+      "exclude": ["Tests"],
+      "in": "vendor"
+    }
+  ],
+  "main": "bin/udb2domainevents.php",
+  "output": "udb2domainevents.phar",
+  "stub": true
+}
