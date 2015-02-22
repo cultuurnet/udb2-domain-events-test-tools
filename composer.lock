@@ -172,12 +172,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cultuurnet/udb2-domain-events.git",
-                "reference": "441009d1a84c9e89b46ceb76d9ea5e759b4e2052"
+                "reference": "ae52beecf9c60197ad6d511dd8f22f02279475a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cultuurnet/udb2-domain-events/zipball/441009d1a84c9e89b46ceb76d9ea5e759b4e2052",
-                "reference": "441009d1a84c9e89b46ceb76d9ea5e759b4e2052",
+                "url": "https://api.github.com/repos/cultuurnet/udb2-domain-events/zipball/ae52beecf9c60197ad6d511dd8f22f02279475a0",
+                "reference": "ae52beecf9c60197ad6d511dd8f22f02279475a0",
                 "shasum": ""
             },
             "require": {
@@ -201,13 +201,17 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
             "authors": [
                 {
                     "name": "Kristof Coomans",
                     "email": "kristof@2dotstwice.be"
                 }
             ],
-            "time": "2015-02-22 07:52:14"
+            "description": "PHP models for domain events in UiTdatabank version 2",
+            "time": "2015-02-22 11:58:49"
         },
         {
             "name": "league/geotools",
