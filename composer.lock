@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "46996aaff465d015df57fdf43f833df1",
+    "hash": "8c42404fe0fab25f7a8b8f1c26f43758",
     "packages": [
         {
             "name": "cilex/cilex",
@@ -125,20 +125,63 @@
             "time": "2012-12-19 10:50:58"
         },
         {
+            "name": "cultuurnet/deserializer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cultuurnet/deserializer.git",
+                "reference": "b65a6d5f5fdafa2952420f8755ecd42f622a495d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cultuurnet/deserializer/zipball/b65a6d5f5fdafa2952420f8755ecd42f622a495d",
+                "reference": "b65a6d5f5fdafa2952420f8755ecd42f622a495d",
+                "shasum": ""
+            },
+            "require": {
+                "nicolopignatelli/valueobjects": "~2.0"
+            },
+            "require-dev": {
+                "phing/phing": "~2.10",
+                "phpunit/phpunit": "~4.3",
+                "squizlabs/php_codesniffer": "~2.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CultuurNet\\Deserializer\\": "src\\"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Kristof Coomans",
+                    "email": "kristof@2dotstwice.be"
+                }
+            ],
+            "time": "2015-02-22 07:46:11"
+        },
+        {
             "name": "cultuurnet/udb2-domain-events",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cultuurnet/udb2-domain-events.git",
-                "reference": "db0f9fd00f0c3beadcec59243080dcc471469b66"
+                "reference": "441009d1a84c9e89b46ceb76d9ea5e759b4e2052"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cultuurnet/udb2-domain-events/zipball/db0f9fd00f0c3beadcec59243080dcc471469b66",
-                "reference": "db0f9fd00f0c3beadcec59243080dcc471469b66",
+                "url": "https://api.github.com/repos/cultuurnet/udb2-domain-events/zipball/441009d1a84c9e89b46ceb76d9ea5e759b4e2052",
+                "reference": "441009d1a84c9e89b46ceb76d9ea5e759b4e2052",
                 "shasum": ""
             },
             "require": {
+                "cultuurnet/deserializer": "~0.1",
                 "nicolopignatelli/valueobjects": "~2.0"
             },
             "require-dev": {
@@ -164,7 +207,7 @@
                     "email": "kristof@2dotstwice.be"
                 }
             ],
-            "time": "2015-02-20 20:28:48"
+            "time": "2015-02-22 07:52:14"
         },
         {
             "name": "league/geotools",
