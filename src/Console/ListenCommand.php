@@ -9,6 +9,7 @@ use CultuurNet\Deserializer\DeserializerInterface;
 use CultuurNet\Deserializer\DeserializerLocatorInterface;
 use PhpAmqpLib\Connection\AMQPConnection;
 use Cilex\Command\Command;
+use PhpAmqpLib\Message\AMQPMessage;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use ValueObjects\String\String;
@@ -64,7 +65,7 @@ class ListenCommand extends Command
             $noAck,
             $exclusive,
             $noWait,
-            function (\PhpAmqpLib\Message\AMQPMessage $msg) use ($output) {
+            function (AMQPMessage $msg) use ($output) {
                 $output->writeln('message received');
                 $output->writeln('routing key: ' . $msg->delivery_info['routing_key']);
                 $output->writeln('content type: ' . $msg->get('content_type'));
@@ -110,7 +111,7 @@ class ListenCommand extends Command
      */
     private function getDeserializer($contentType)
     {
-        /** @var \CultuurNet\Deserializer\DeserializerLocatorInterface $deserializerLocator */
+        /** @var DeserializerLocatorInterface $deserializerLocator */
         $deserializerLocator = $this->getService('deserializerLocator');
 
         return $deserializerLocator->getDeserializerForContentType(
