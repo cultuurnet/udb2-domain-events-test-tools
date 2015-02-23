@@ -4,10 +4,11 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 use Cilex\Application;
+use CultuurNet\UDB2DomainEventsTestTools\Console\DeclareExchangeCommand;
 use CultuurNet\UDB2DomainEventsTestTools\Console\ListenCommand;
 use CultuurNet\UDB2DomainEventsTestTools\Console\PublishCommand;
-use CultuurNet\UDB2DomainEventsTestTools\Console\DeclareExchangeCommand;
 use PhpAmqpLib\Connection\AMQPConnection;
+use ValueObjects\String\String;
 
 $cwd = getcwd();
 
@@ -45,7 +46,14 @@ $app['deserializerLocator'] = $app->share(
         $deserializerLocator = new \CultuurNet\Deserializer\SimpleDeserializerLocator();
 
         $deserializerLocator->registerDeserializer(
-            new \ValueObjects\String\String(
+            new String(
+                'application/vnd.cultuurnet.udb2-events.event-created+json'
+            ),
+            new \CultuurNet\UDB2DomainEvents\EventCreatedJSONDeserializer()
+        );
+
+        $deserializerLocator->registerDeserializer(
+            new String(
                 'application/vnd.cultuurnet.udb2-events.event-updated+json'
             ),
             new \CultuurNet\UDB2DomainEvents\EventUpdatedJSONDeserializer()
