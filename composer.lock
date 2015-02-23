@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8c42404fe0fab25f7a8b8f1c26f43758",
+    "hash": "3ef8fc902d622b5657261685e57af5f2",
     "packages": [
         {
             "name": "cilex/cilex",

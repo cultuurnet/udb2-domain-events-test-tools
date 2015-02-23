@@ -1,5 +1,7 @@
 {
   "name": "cultuurnet/udb2-domain-events-test-tools",
+  "description": "Command line tools for testing UDB2 domain events sent over AMQP",
+  "license": "GPL-3.0",
   "authors": [
     {
       "name": "Kristof Coomans",
