@@ -90,7 +90,7 @@ class ListenCommand extends Command
             }
         );
 
-        while (true) {
+        while (count($channel->callbacks)) {
             $channel->wait();
         }
     }
