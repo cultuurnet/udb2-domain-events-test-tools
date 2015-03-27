@@ -68,6 +68,13 @@ class ListenCommand extends Command
             function (AMQPMessage $msg) use ($output) {
                 $output->writeln('message received');
                 $output->writeln('routing key: ' . $msg->delivery_info['routing_key']);
+
+                if ($msg->has('correlation_id')) {
+                    $output->writeln(
+                        'correlation id: ' . $msg->get('correlation_id')
+                    );
+                }
+
                 $output->writeln('content type: ' . $msg->get('content_type'));
                 $output->writeln('body: ' . PHP_EOL . $msg->body);
 
