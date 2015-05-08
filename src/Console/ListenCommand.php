@@ -38,16 +38,19 @@ class ListenCommand extends Command
         );
 
         $queueName = $result[0];
+        $output->writeln('queue declared: ' . $queueName);
+
         $routingKey = '#';
 
         $config = $this->getService('config');
+
         $channel->queue_bind(
             $queueName,
             $config['amqp']['exchange'],
             $routingKey
         );
 
-        $output->writeln('queue declared: ' . $queueName);
+        $output->writeln('bound to exchange ' . $config['amqp']['exchange']);
 
         $output->writeln('waiting for incoming messages');
         $output->writeln('');
