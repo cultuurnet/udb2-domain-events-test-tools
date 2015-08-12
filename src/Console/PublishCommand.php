@@ -11,6 +11,7 @@ use PhpAmqpLib\Message\AMQPMessage;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use ValueObjects\Identity\UUID;
 
 class PublishCommand extends Command
 {
@@ -54,6 +55,11 @@ class PublishCommand extends Command
             $exchange,
             $routingKey
         );
+
+        $output->writeln(
+            'message published with correlation_id ' .
+            $message->get('correlation_id')
+        );
     }
 
     /**
@@ -73,10 +79,12 @@ class PublishCommand extends Command
         $contentType = $input->getArgument('content-type');
         $filePath = $input->getArgument('file-path');
         $body = file_get_contents($filePath);
+        $correlationId = UUID::generateAsString();
 
         $message = new AMQPMessage();
         $message->setBody($body);
         $message->set('content_type', $contentType);
+        $message->set('correlation_id', $correlationId);
 
         return $message;
     }

@@ -46,6 +46,23 @@ An example to notify about the creation of a cultural event:
     samples/application/vnd.cultuurnet.udb2-events.event-created+json;
 ```
 
+An example to notify about the creation of an actor:
+
+```
+ ./bin/udb2domainevents.php publish \
+    test \
+    application/vnd.cultuurnet.udb2-events.actor-created+json \
+    samples/application/vnd.cultuurnet.udb2-events.actor-created+json;
+```
+
+An example to notify about an update of an actor:
+
+```
+ ./bin/udb2domainevents.php publish \
+    test \
+    application/vnd.cultuurnet.udb2-events.actor-updated+json \
+    samples/application/vnd.cultuurnet.udb2-events.actor-updated+json;
+```
 
 # Building a single-file application
 
