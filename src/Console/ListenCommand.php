@@ -29,9 +29,11 @@ class ListenCommand extends Command
 
         $channel = $connection->channel();
 
+        $config = $this->getService('config');
+
         // Declare an exclusive, non-durable queue for testing purposes.
         $result = $channel->queue_declare(
-            '',
+            $config['amqp']['queue-prefix'] . uniqid(),
             false,
             false,
             true
@@ -41,8 +43,6 @@ class ListenCommand extends Command
         $output->writeln('queue declared: ' . $queueName);
 
         $routingKey = '#';
-
-        $config = $this->getService('config');
 
         $channel->queue_bind(
             $queueName,

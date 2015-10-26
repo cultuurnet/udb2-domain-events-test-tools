@@ -4,4 +4,5 @@ amqp:
   user: foo
   password: bar
   vhost: example
-  exchange: 'udb2'
+  exchange: udb2.e.entry
+  queue-prefix: udb2.q.
