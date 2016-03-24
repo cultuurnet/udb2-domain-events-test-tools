@@ -1,5 +1,6 @@
 {
   "eventId": "7914ed2d-9f28-4946-b9bd-ae8f7a4aea11",
   "time": "2015-02-20T10:39:09+0100",
-  "author": "me@example.com"
+  "author": "me@example.com",
+  "url": "http://example.com"
 }
