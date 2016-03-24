@@ -72,4 +72,4 @@ You can put this entire PHP application into a single Phar file with [Box].
 box build
 ```
 
-[Box]: http://box-project.org/
+[Box]: http://box-project.github.io/box2/
